@@ -1,8 +1,12 @@
 name: Deploy website to GitHub Pages
 
-# Publishing is manual: pushing source code alone does not deploy the website.
+# Publish manually in Actions, or explicitly update the deployment request file.
+# Ordinary source/image uploads do not publish the website.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/pages-deploy-request']
 
 permissions:
   contents: read

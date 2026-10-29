@@ -78,7 +78,7 @@ GitHub Pages can host the same static build. Vite uses relative asset paths so t
 3. When ready to publish, open **Actions → Deploy website to GitHub Pages → Run workflow**, choose `main` and run it.
 4. Wait for the workflow to finish; its deployment result provides the website link.
 
-The workflow is manual. A push alone does not publish. The expected project address is `https://curtisarjohnson-beep.github.io/UK-R-R/`, subject to successful deployment. The current preview stays unindexed because the branding and photography are incomplete. When ready for indexing, set `VITE_SITE_URL` to the full confirmed site URL, including `/UK-R-R/`. Leave it unset for this preview. GitHub Pages does not apply Cloudflare's `_headers` file.
+Publish using Run workflow in Actions, or deliberately edit `.github/pages-deploy-request` and push that change to `main`. The latter provides an explicit publish trigger when API dispatch is unavailable. Ordinary source/image uploads do not publish. The expected project address is `https://curtisarjohnson-beep.github.io/UK-R-R/`, subject to successful deployment. The current preview stays unindexed because the branding and photography are incomplete. When ready for indexing, set `VITE_SITE_URL` to the full confirmed site URL, including `/UK-R-R/`. Leave it unset for this preview. GitHub Pages does not apply Cloudflare's `_headers` file.
 
 When adding images, use `images/name.webp` without a leading slash for this relative-path build. For example, set `site.logo` to `images/logo.png`. Root-absolute `/images/...` paths would point outside the project directory on GitHub Pages.
 
