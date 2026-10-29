@@ -29,20 +29,28 @@ The current refinement uses locally hosted **DM Serif Display** headings (regula
 
 The supplied jungle clearing and transparent original chameleon emblem are now integrated into the hero; the emblem also appears in the footer. The navigation retains its compact text wordmark. Both source PNGs remain unchanged in `assets/originals/`. Keep future original uploads in this folder; put optimised website copies in `public/images/` and reference those from `src/config.ts`. Files in `assets/originals/` are retained for editing and are not copied into the deployed site. Web-delivery copies live in `public/images/`: the background is quality-90 WebP (about 323 KB); the emblem is lossless WebP (about 1.15 MB), verified pixel-for-pixel against the supplied RGBA original. No logo redrawing, recolouring or removal of details was performed.
 
-The hero keeps copy over the dark left side, with the logo over the sunlit right clearing. On mobile the emblem moves above the headline. Real rescue and community photographs are still missing; the labelled panels remain until those files and permissions are supplied. The jungle scene is decorative artwork, not a photograph of a UK R&R facility.
+The hero keeps copy over the dark left side, with the logo over the sunlit right clearing. On mobile the emblem moves above the headline. The supplied About portrait and five animal-card images are installed. Only the separate community gallery retains labelled placeholders. The jungle scene is decorative artwork, not a photograph of a UK R&R facility.
 
 Edit `src/config.ts` for email, Facebook, location, establishment year, telephone, original logo and photography paths. Section copy lives in `src/App.tsx`; visual styles live in `src/styles.css`.
 
-The original logo and jungle artwork are installed. Other photo panels remain clearly labelled placeholders, drawn with Lucide icons; they are not authentic rescue photographs. Replace those panels with approved original photos before presenting the site as complete.
+The original logo and jungle artwork are installed. The About portrait and five animal cards now use the supplied images. The separate community gallery still has clearly labelled placeholders drawn with Lucide icons; replace those with approved gallery images.
 
 Create `public/images/`, add the supplied original assets, then set the relevant paths in `src/config.ts`, for example `images/snake-enclosure.webp`. Preserve logo proportions; no replacement logo has been invented. The original logo is configured already; add an approved small favicon separately if desired.
 
-Missing assets:
+Current image mapping:
 
-- Woman holding a snake in front of enclosures (About).
-- Snake coiled in a leafy enclosure and bearded dragon close-up (showcase).
-- Licensed tortoise, gecko and other exotic animal photographs.
-- Man with snake around shoulders; woman in pink with bearded dragon; optional man with tortoise (gallery).
+| Section | Original in `assets/originals/` | Web image in `public/images/` |
+| --- | --- | --- |
+| About | `reptile-room-portrait-with-ball-python.png` | `about.webp` |
+| Other exotic animals | `reptile-keeper-with-exotic-animals.png` | `exotics.webp` |
+| Snakes | `snakes.jpg` | `snakes.webp` |
+| Lizards | `lizards.jpg` | `lizards.webp` |
+| Geckos | `geckos.jpg` | `geckos.webp` |
+| Tortoises | `tortoises.jpg` | `tortoises.webp` |
+
+The six web copies use quality-88 WebP, retain their full composition and natural colours, and are lazy-loaded. Originals are unchanged. Card display crops are controlled by `object-position` rules in `src/jungle.css`; the exotic-animal group uses `contain` so animals at the edges stay visible. Supplied images are not used to infer individual roles, animal availability or facility capabilities.
+
+Still missing: the separate community gallery photographs (man with snake around shoulders, woman in pink with bearded dragon, optional man with tortoise), with permission for use.
 
 Only use photography with appropriate rights and consent for identifiable people. Record permissions and licensing in your own records. Do not infer roles or identities from photos. Export appropriately sized WebP images (roughly 1600–2000px hero, 800–1000px panels; avoid upscaling). Use accurate alt text, and adjust `object-position` per image if needed. Panel aspect space is reserved to prevent layout shifts; below-fold images are lazy-loaded. For larger image libraries add responsive `srcSet` variants. No external photo service is contacted by this version.
 
@@ -104,4 +112,4 @@ Organisation structured data contains verified information only. No street addre
 - Build, test and check keyboard/mobile behaviour after replacing assets.
 - Approve deployment, then connect and publish through Cloudflare Pages.
 
-The repository contains a functional visual preview. The logo and jungle background are installed; missing rescue/community photos remain identified. Updates are uploaded separately from the manual Pages deployment; run the workflow only after deployment is approved.
+The repository contains a functional visual preview. The logo and jungle background are installed; the About portrait and all five animal-card images are installed, while missing community-gallery photos remain identified. Updates are uploaded separately from the manual Pages deployment; run the workflow only after deployment is approved.

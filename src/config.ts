@@ -18,12 +18,12 @@ export const site = {
 // Leaving a path empty displays an explicitly labelled editorial placeholder.
 export const photos: Record<string, { src: string; alt: string; label: string }> = {
   hero: { src: 'images/jungle-clearing.webp', alt: 'Illustrated jungle with layered tropical foliage and warm sunlight', label: 'Illustrated jungle artwork' },
-  about: { src: '', alt: 'Woman holding a snake in front of reptile enclosures', label: 'Life at UK R&R' },
-  snakes: { src: '', alt: 'Snake coiled inside a leafy enclosure', label: 'Snakes' },
-  lizards: { src: '', alt: 'Close-up of a bearded dragon on a carpet', label: 'Lizards' },
-  tortoises: { src: '', alt: 'Tortoise', label: 'Tortoises' },
-  geckos: { src: '', alt: 'Gecko', label: 'Geckos' },
-  exotics: { src: '', alt: 'Other exotic animals', label: 'Other exotic animals' },
+  about: { src: 'images/about.webp', alt: 'Man holding a ball python in a room lined with reptile enclosures', label: 'Life at UK R&R' },
+  snakes: { src: 'images/snakes.webp', alt: 'Ball python coiled in a person’s hands', label: 'Snakes' },
+  lizards: { src: 'images/lizards.webp', alt: 'Bearded dragon resting on a computer keyboard', label: 'Lizards' },
+  tortoises: { src: 'images/tortoises.webp', alt: 'Tortoise held by a man sitting beside a child', label: 'Tortoises' },
+  geckos: { src: 'images/geckos.webp', alt: 'Gecko resting amongst cork bark and green leaves', label: 'Geckos' },
+  exotics: { src: 'images/exotics.webp', alt: 'Man surrounded by reptiles, a tortoise and a tarantula', label: 'Other exotic animals' },
   communitySnake: { src: '', alt: 'Man sitting with a snake around his shoulders', label: 'A moment of connection' },
   communityDragon: { src: '', alt: 'Woman in a pink top holding a bearded dragon', label: 'Care, in the everyday' },
   communityTortoise: { src: '', alt: 'Man holding a tortoise indoors', label: 'Small moments. Lasting care.' },

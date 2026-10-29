@@ -50,6 +50,13 @@ h2 { letter-spacing: -.025em; line-height: 1.16; }
 .card-top > svg { color: #d8b474; }
 .card-rule { width: 48px; background: #c49a55; border-radius: 100%; }
 .animal-card .photo { border-radius: 14px 14px 32px 14px; }
+.photo-about > img { object-position: 50% 40%; }
+.photo-snakes > img { object-position: 50% 33%; }
+.photo-lizards > img { object-position: 65% 28%; }
+.photo-geckos > img { object-position: 50% 56%; }
+.photo-tortoises > img { object-position: 50% 65%; }
+/* Keep every animal in the supplied group composition visible. */
+.photo-exotics > img { object-fit: contain; }
 .animal-label { padding-inline: 3px; }
 .gallery-section { border-radius: 50% 50% 0 0 / 18px 18px 0 0; }
 .gallery-grid .photo { border-radius: 48% 48% 10px 10px / 20% 20% 10px 10px; }
