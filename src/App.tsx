@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowRight, Check, ChevronUp, Heart, Leaf, Mail, MapPin, Menu, MessageCircle, PackageOpen, Phone, ShieldCheck, Sprout, Users, X } from 'lucide-react'
 import { navigation, photos, site } from './config'
+import LogoReveal from './LogoReveal'
 
 function Brand({ footer = false }: { footer?: boolean }) {
   return <a href="#home" className={`brand ${footer ? 'brand-footer' : ''}`} aria-label={`${site.name} home`}>
@@ -77,7 +78,7 @@ function App() {
           {photos.hero.src && <img className="jungle-background" src={photos.hero.src} width="1672" height="941" alt="" fetchPriority="high" decoding="async" />}
         </div>
         <div className="hero-emblem">
-          {site.logo ? <img className="hero-original-logo" src={site.logo} width="1402" height="1122" alt={site.name} fetchPriority="high" /> : <div className="hero-asset-pending"><span className="eyebrow">THE NEXT CHAPTER</span><p>A little adventure.<br />A lot of heart.</p><span>Original chameleon emblem & illustrated<br />jungle artwork awaiting supply.</span></div>}
+          {site.logo ? <LogoReveal /> : <div className="hero-asset-pending"><span className="eyebrow">THE NEXT CHAPTER</span><p>A little adventure.<br />A lot of heart.</p><span>Original chameleon emblem & illustrated<br />jungle artwork awaiting supply.</span></div>}
         </div>
         <div className="container hero-content">
           <p className="eyebrow"><span /> NORTHAMPTONSHIRE · EST. {site.established}</p>

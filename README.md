@@ -21,6 +21,14 @@ npm run preview
 
 The build performs strict TypeScript checking and outputs `dist/`. Tests render the actual React page and check navigation, contact details and content safeguards. Browser validation should cover 360px mobile, 768px tablet and 1440px desktop, keyboard navigation, menu closing with Escape, reduced motion and contact links.
 
+## One-shot chameleon reveal
+
+The hero emblem now plays a four-second CSS sequence using the existing green chameleon and flag assets: a gentle entrance, warm gold dissolve and top-to-bottom reveal of the unchanged original full emblem. It is a stylised reveal rather than a registered colour morph. The concept sheet is never displayed. No animation library was added.
+
+`src/LogoReveal.tsx` pre-decodes the three images before playback, falls back to the original emblem on errors/timeouts, and removes decorative layers after completion. `src/logo-reveal.css` reserves the original logo proportions and plays the sequence once. Reduced motion shows the static emblem immediately, including when the preference changes during playback. The surrounding hero layout, jungle background and copy are unchanged. WebP animation layers retain the supplied transparency; original PNGs remain in `public/images/logo-animation/`.
+
+Verified in Chromium at desktop/mobile widths: playback completes once, the final original is visible, decorative layers are removed, bounds remain fixed, reduced motion and failed-layer fallback work. Existing responsive/navigation/accessibility checks also pass. Deployment still requires approval.
+
 ## Content and images
 
 ### Jungle Adventure refinement

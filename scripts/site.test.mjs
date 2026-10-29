@@ -24,7 +24,7 @@ test('rendered page preserves contact, navigation and content safeguards', async
     assert.ok(!html.includes('<form'))
     assert.ok(html.includes('images/jungle-clearing.webp'))
     assert.ok(html.includes('images/chameleon-emblem.webp'))
-    assert.equal((html.match(/<img\b/g) || []).length, 9, 'Supplied hero, logo, About and five animal images should render')
+    assert.equal((html.match(/<img\b/g) || []).length, 11, 'Supplied images and the two decorative animation layers should render')
     assert.ok(html.includes('PHOTOGRAPH TO FOLLOW'))
     assert.ok(html.includes('The community gallery still contains labelled placeholders'))
     assert.ok(html.includes('application/ld+json'))

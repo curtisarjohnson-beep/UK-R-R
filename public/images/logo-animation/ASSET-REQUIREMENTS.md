@@ -1,3 +1,7 @@
+> Historical notes for the earlier literal colour-morph proposal. The owner has
+> since approved a stylised reveal using the existing assets; that implementation
+> is documented in the repository README. Additional artwork is not a blocker.
+
 # Chameleon reveal: artwork handoff
 
 The supplied files were inspected. The website remains on its original static
