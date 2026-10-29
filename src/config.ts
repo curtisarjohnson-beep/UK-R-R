@@ -8,7 +8,7 @@ export const site = {
   // Set to a genuine international-format number to enable the telephone link.
   phone: '' as string,
   // Add the original logo file to public/images, then set its path here.
-  logo: '' as string,
+  logo: 'images/chameleon-emblem.webp' as string,
   productionUrl: import.meta.env.VITE_SITE_URL || '',
 }
 
@@ -17,7 +17,7 @@ export const site = {
 // Only add original, licensed images with consent.
 // Leaving a path empty displays an explicitly labelled editorial placeholder.
 export const photos: Record<string, { src: string; alt: string; label: string }> = {
-  hero: { src: '', alt: 'Illustrated jungle with layered tropical foliage and warm sunlight', label: 'Illustrated jungle artwork' },
+  hero: { src: 'images/jungle-clearing.webp', alt: 'Illustrated jungle with layered tropical foliage and warm sunlight', label: 'Illustrated jungle artwork' },
   about: { src: '', alt: 'Woman holding a snake in front of reptile enclosures', label: 'Life at UK R&R' },
   snakes: { src: '', alt: 'Snake coiled inside a leafy enclosure', label: 'Snakes' },
   lizards: { src: '', alt: 'Close-up of a bearded dragon on a carpet', label: 'Lizards' },

@@ -27,20 +27,18 @@ The build performs strict TypeScript checking and outputs `dist/`. Tests render 
 
 The current refinement uses locally hosted **DM Serif Display** headings (regular and italic) and **Nunito Sans** body/navigation text. Font licenses are retained in `public/licenses/`. `src/jungle.css` layers the warmer styling over the existing layout: softer frames, arched image crops, warmer green panels, gold buttons and restrained curved section transitions. Fonts load from the same host; no Google Fonts request is made.
 
-The written refinement brief was supplied, but its visual reference image, exact original chameleon logo, illustrated jungle artwork and original photographs were not attached. The full illustrated composition is therefore **pending**, rather than approximated with generic leaf icons or generated rescue photography. Set `photos.hero.src` to approved local jungle artwork and `site.logo` to the exact original logo to activate the prepared background and hero emblem. The navigation retains its compact text wordmark. Prefer a transparent original logo if available; it is contained without cropping or recolouring. Adjust the hero image crop after reviewing the actual reference. The hero uses a dark readability overlay and the logo is repositioned above the headline on mobile. All existing content, section anchors, contact links and reduced-motion support remain.
+The supplied jungle clearing and transparent original chameleon emblem are now integrated into the hero; the emblem also appears in the footer. The navigation retains its compact text wordmark. Both source PNGs remain unchanged at the repository root. Web-delivery copies live in `public/images/`: the background is quality-90 WebP (about 323 KB); the emblem is lossless WebP (about 1.15 MB), verified pixel-for-pixel against the supplied RGBA original. No logo redrawing, recolouring or removal of details was performed.
 
-The artwork should have layered foliage, vines and golden sunlight, with a naturally dark left-hand area for copy. This environment must come from a supplied/approved image asset. No unrelated illustration has been substituted. Selected section illustrations can be added after receiving the reference; current curves and borders are framing only, not replacement jungle artwork.
+The hero keeps copy over the dark left side, with the logo over the sunlit right clearing. On mobile the emblem moves above the headline. Real rescue and community photographs are still missing; the labelled panels remain until those files and permissions are supplied. The jungle scene is decorative artwork, not a photograph of a UK R&R facility.
 
 Edit `src/config.ts` for email, Facebook, location, establishment year, telephone, original logo and photography paths. Section copy lives in `src/App.tsx`; visual styles live in `src/styles.css`.
 
-The supplied brief included **no image files**. This version intentionally uses a temporary text wordmark and labelled botanical photo panels, drawn with Lucide icons. They are not the original logo or authentic rescue photographs. Replace them before presenting this as the finished site.
+The original logo and jungle artwork are installed. Other photo panels remain clearly labelled placeholders, drawn with Lucide icons; they are not authentic rescue photographs. Replace those panels with approved original photos before presenting the site as complete.
 
-Create `public/images/`, add the supplied original assets, then set the relevant paths in `src/config.ts`, for example `images/snake-enclosure.webp`. Preserve logo proportions; no replacement logo has been invented. Generate a favicon from the original logo once supplied and add its link to `index.html`.
+Create `public/images/`, add the supplied original assets, then set the relevant paths in `src/config.ts`, for example `images/snake-enclosure.webp`. Preserve logo proportions; no replacement logo has been invented. The original logo is configured already; add an approved small favicon separately if desired.
 
 Missing assets:
 
-- Original Union Jack chameleon logo.
-- Licensed cinematic hero photograph.
 - Woman holding a snake in front of enclosures (About).
 - Snake coiled in a leafy enclosure and bearded dragon close-up (showcase).
 - Licensed tortoise, gecko and other exotic animal photographs.
@@ -100,10 +98,10 @@ Organisation structured data contains verified information only. No street addre
 
 ## Release checklist
 
-- Supply original logo, approved photography and consent; replace all labelled panels.
+- Supply approved rescue/community photography and consent; replace the remaining labelled panels.
 - Review copy and confirm contact links with UK R&R.
 - Confirm the domain and set `VITE_SITE_URL`; verify generated SEO files.
 - Build, test and check keyboard/mobile behaviour after replacing assets.
 - Approve deployment, then connect and publish through Cloudflare Pages.
 
-The first version is a functional visual preview, with missing brand and photo assets clearly identified. It has not been deployed.
+The repository contains a functional visual preview. The logo and jungle background are installed; missing rescue/community photos remain identified. Updates are uploaded separately from the manual Pages deployment; run the workflow only after deployment is approved.
