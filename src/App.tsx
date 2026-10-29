@@ -4,7 +4,7 @@ import { navigation, photos, site } from './config'
 
 function Brand({ footer = false }: { footer?: boolean }) {
   return <a href="#home" className={`brand ${footer ? 'brand-footer' : ''}`} aria-label={`${site.name} home`}>
-    {site.logo ? <img src={site.logo} alt={site.name} width="180" height="80" className="original-logo" /> : <>
+    {site.logo && footer ? <img src={site.logo} alt={site.name} width="180" height="80" className="original-logo" /> : <>
       <span className="brand-name">UK R<span>&</span>R<span className="brand-dot">.</span></span>
       <span className="brand-sub">REPTILES & RECOVERY</span>
     </>}
@@ -73,7 +73,12 @@ function App() {
 
     <main id="main">
       <section className="hero" id="home" aria-labelledby="hero-title">
-        <div className="hero-art"><Photo id="hero" eager /><span className="hero-art-label">A SPACE FOR SECOND CHANCES</span></div>
+        <div className={`hero-art jungle-scene ${photos.hero.src ? 'has-artwork' : 'awaiting-artwork'}`}>
+          {photos.hero.src && <img className="jungle-background" src={photos.hero.src} alt="" fetchPriority="high" decoding="async" />}
+        </div>
+        <div className="hero-emblem">
+          {site.logo ? <img className="hero-original-logo" src={site.logo} alt={site.name} fetchPriority="high" /> : <div className="hero-asset-pending"><span className="eyebrow">THE NEXT CHAPTER</span><p>A little adventure.<br />A lot of heart.</p><span>Original chameleon emblem & illustrated<br />jungle artwork awaiting supply.</span></div>}
+        </div>
         <div className="container hero-content">
           <p className="eyebrow"><span /> NORTHAMPTONSHIRE · EST. {site.established}</p>
           <h1 id="hero-title">Every Reptile<br />Deserves a<br /><em>Second Chance.</em></h1>
@@ -141,7 +146,7 @@ function App() {
       <section className="section contact-section" id="contact" aria-labelledby="contact-title"><div className="container contact-grid reveal"><div><p className="eyebrow">06 / LET’S TALK</p><h2 id="contact-title">Let’s Give Reptiles<br />a <em>Better Future.</em></h2><p>Whether you need advice, would like to discuss rehoming or want to support our work, we’d love to hear from you.</p><span className="location"><MapPin size={18} />{site.location}</span></div><div className="contact-options"><a className="contact-card" href={`mailto:${site.email}`}><Mail size={26} strokeWidth={1.4} /><span><small>DROP US A LINE</small><strong>{site.email}</strong></span><ArrowRight size={20} /></a><a className="contact-card" href={site.facebook} target="_blank" rel="noopener noreferrer"><Users size={26} strokeWidth={1.4} /><span><small>JOIN THE CONVERSATION</small><strong>Find us on Facebook</strong><span className="sr-only"> (opens in a new tab)</span></span><ArrowRight size={20} /></a>{site.phone && <a className="contact-card" href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}><Phone size={26} /><span><small>GIVE US A CALL</small><strong>{site.phone}</strong></span><ArrowRight size={20} /></a>}<p className="contact-note">A little advice can be the start of something good.</p></div></div></section>
     </main>
 
-    <footer className="site-footer"><div className="container"><div className="footer-top"><div><Brand footer /><p>A safe place for reptiles in need of some R&R.<br />Rescue. Recovery. Rehoming.</p></div><nav aria-label="Footer navigation">{navigation.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav><div className="footer-contact"><span>{site.location}</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook <ArrowRight size={14} /><span className="sr-only"> (opens in a new tab)</span></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span><span>Built with care. For lives that matter.</span><a href="#home">Back to top <ChevronUp size={16} /></a></div><p className="privacy-note">This site has no contact forms, analytics or embedded social feeds. Email and Facebook links open external services, which have their own privacy policies.</p><p className="asset-note">First-version preview: original logo and photography awaiting supply. The text wordmark and botanical panels are temporary placeholders.</p></div></footer>
+    <footer className="site-footer"><div className="container"><div className="footer-top"><div><Brand footer /><p>A safe place for reptiles in need of some R&R.<br />Rescue. Recovery. Rehoming.</p></div><nav aria-label="Footer navigation">{navigation.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav><div className="footer-contact"><span>{site.location}</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook <ArrowRight size={14} /><span className="sr-only"> (opens in a new tab)</span></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span><span>Built with care. For lives that matter.</span><a href="#home">Back to top <ChevronUp size={16} /></a></div><p className="privacy-note">This site has no contact forms, analytics or embedded social feeds. Email and Facebook links open external services, which have their own privacy policies.</p><p className="asset-note">First-version preview: original logo and photography awaiting supply. The text wordmark and image panels are temporary placeholders; illustrated jungle artwork is also awaiting supply.</p></div></footer>
   </>
 }
 

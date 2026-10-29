@@ -1,0 +1,99 @@
+/* Jungle refinement. The hero scene uses approved local artwork when supplied;
+   it deliberately does not simulate the missing illustration with CSS/icons. */
+:root {
+  --heading-font: 'DM Serif Display', Georgia, serif;
+  --body-font: 'Nunito Sans Variable', Arial, sans-serif;
+  font-family: var(--body-font);
+}
+h1, h2, h3, .brand-name, .photo-caption, .est-stamp strong,
+.about-copy .lead, .gallery-grid figcaption, .values > span, .contact-note {
+  font-family: var(--heading-font);
+}
+h1 { letter-spacing: -.035em; line-height: 1.06; }
+h2 { letter-spacing: -.025em; line-height: 1.16; }
+.brand-name { letter-spacing: -.04em; }
+.photo-caption small { font-family: var(--body-font); }
+.eyebrow { font-weight: 700; letter-spacing: .17em; }
+.main-nav > a:not(.button) { font-size: .78rem; font-weight: 650; }
+.button { border-radius: 8px 8px 18px 8px; font-size: .85rem; font-weight: 750; box-shadow: 0 4px 0 #07170c20; }
+.button-small { font-size: .76rem; }
+.menu-toggle { border-radius: 10px; }
+.hero { min-height: 790px; background: #10281d; }
+.hero-content { padding-top: 90px; padding-bottom: 145px; }
+.hero-description { font-size: .95rem; max-width: 435px; }
+.hero-identity { font-size: .85rem; font-weight: 650; }
+.hero-art.jungle-scene { inset: 0; opacity: 1; }
+.jungle-background { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
+.jungle-scene::after { background: linear-gradient(90deg, #10281df5 0%, #10281de8 30%, #10281d70 65%, #10281d25), linear-gradient(0deg, #10281d, transparent 30%); }
+.jungle-scene.awaiting-artwork { background: #193526; }
+.hero-emblem { position: absolute; inset: 80px 5% 110px 57%; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.hero-original-logo { display: block; width: 100%; max-width: 440px; max-height: 490px; object-fit: contain; filter: drop-shadow(0 12px 24px #07170c66); }
+.hero-asset-pending { max-width: 340px; padding: 36px 28px; border-block: 1px solid #c49a5566; text-align: center; }
+.hero-asset-pending .eyebrow { font-size: .64rem; margin-bottom: 18px; }
+.hero-asset-pending p { font-family: var(--heading-font); color: #dec69c; font-size: clamp(1.6rem, 2.7vw, 2.5rem); line-height: 1.25; }
+.hero-asset-pending > span:last-child { display: block; font-size: .73rem; color: #b8c5b5; line-height: 1.8; margin-top: 20px; }
+.hero-bottom { font-weight: 650; }
+.mission-strip { position: relative; border-radius: 45% 45% 0 0 / 12px 12px 0 0; margin-top: -12px; padding-block: 30px 26px; font-weight: 700; }
+.section-ivory { background-color: #f4f0e6; }
+.about-visual > .photo { border-radius: 42% 42% 12px 12px / 25% 25% 12px 12px; }
+.about-visual::after { border-radius: 42% 42% 12px 12px / 25% 25% 12px 12px; }
+.est-stamp { border-radius: 16px 16px 32px 16px; background: #f4f0e6; box-shadow: 0 10px 30px #10281d0c; }
+.about-copy > p:not(.eyebrow), .support-intro, .help-item p { font-size: .95rem; }
+.inline-note { font-size: .8rem; }
+.services-section { position: relative; }
+.service-grid { border: 0; gap: 18px; }
+.service-card { border: 1px solid #d6dac32b; border-radius: 16px 16px 42px 16px; background: #1a3426; }
+.service-card + .service-card { border: 1px solid #d6dac32b; }
+.service-card:hover { background: #234b35; }
+.service-card p { font-size: .94rem; }
+.card-top { margin-bottom: 36px; }
+.card-top > svg { color: #d8b474; }
+.card-rule { width: 48px; background: #c49a55; border-radius: 100%; }
+.animal-card .photo { border-radius: 14px 14px 32px 14px; }
+.animal-label { padding-inline: 3px; }
+.gallery-section { border-radius: 50% 50% 0 0 / 18px 18px 0 0; }
+.gallery-grid .photo { border-radius: 48% 48% 10px 10px / 20% 20% 10px 10px; }
+.gallery-grid figure:nth-child(2) .photo { border-radius: 14px 14px 42px 14px; }
+.gallery-grid figcaption { font-size: 1.1rem; }
+.support-section { border-bottom: 6px solid #a77c3b44; }
+.icon-circle { background: #e9e5d5; flex-shrink: 0; }
+.help-item h3 { color: #234b35; }
+.values-section { background: #2d4c34; }
+.values > span { font-size: 1.4rem; }
+.contact-card { border-radius: 14px 14px 28px 14px; background: #193526; }
+.contact-card strong { font-weight: 650; }
+.contact-grid > div > p:not(.eyebrow) { font-size: .95rem; }
+.footer-top p, .footer-contact, .footer-top nav { font-size: .8rem; }
+@media (min-width: 1600px) { .hero-content { padding-top: 100px; padding-bottom: 150px; } }
+@media (max-width: 1099px) {
+  .main-nav > a:not(.button) { font-size: .95rem; }
+  .hero-emblem { left: 61%; right: 3%; }
+  .hero-asset-pending { padding-inline: 12px; }
+  .values > span { font-size: 1.15rem; }
+}
+@media (max-width: 767px) {
+  .hero { min-height: 0; padding-bottom: 100px; }
+  .hero-content { padding-top: 55px; padding-bottom: 28px; }
+  h1 { font-size: clamp(3.3rem, 9.8vw, 4.8rem); }
+  .hero-description { font-size: .95rem; }
+  .hero-emblem { position: relative; inset: auto; width: calc(100% - 40px); margin: 0 auto; padding-top: 30px; }
+  .hero > .hero-emblem { display: none; }
+  .hero:has(.hero-original-logo) > .hero-emblem { display: flex; position: absolute; top: 25px; right: 20px; left: auto; width: 85px; height: 85px; margin: 0; padding: 0; }
+  .hero:has(.hero-original-logo) .hero-content { padding-top: 125px; }
+  .hero-asset-pending { padding: 20px; width: 100%; max-width: none; }
+  .jungle-scene::after { background: linear-gradient(90deg, #10281df5, #10281dd9), linear-gradient(0deg, #10281d, transparent); }
+  .jungle-background { object-position: 70% center; }
+  .mission-strip { border-radius: 45% 45% 0 0 / 8px 8px 0 0; }
+  .service-grid { gap: 15px; }
+  .service-card { padding: 28px; }
+  .service-card + .service-card { border: 1px solid #d6dac32b; }
+  .gallery-grid figcaption { font-size: 1rem; }
+  .values > span { font-size: 1.2rem; }
+  .contact-card strong { font-size: .82rem; }
+}
+@media (max-width: 380px) {
+  h1 { font-size: 3rem; }
+  .hero .button-row { gap: 17px; }
+  .hero .text-link { font-size: .78rem; }
+  .contact-card strong { font-size: .75rem; }
+}

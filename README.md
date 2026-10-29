@@ -23,6 +23,14 @@ The build performs strict TypeScript checking and outputs `dist/`. Tests render 
 
 ## Content and images
 
+### Jungle Adventure refinement
+
+The current refinement uses locally hosted **DM Serif Display** headings (regular and italic) and **Nunito Sans** body/navigation text. Font licenses are retained in `public/licenses/`. `src/jungle.css` layers the warmer styling over the existing layout: softer frames, arched image crops, warmer green panels, gold buttons and restrained curved section transitions. Fonts load from the same host; no Google Fonts request is made.
+
+The written refinement brief was supplied, but its visual reference image, exact original chameleon logo, illustrated jungle artwork and original photographs were not attached. The full illustrated composition is therefore **pending**, rather than approximated with generic leaf icons or generated rescue photography. Set `photos.hero.src` to approved local jungle artwork and `site.logo` to the exact original logo to activate the prepared background and hero emblem. The navigation retains its compact text wordmark. Prefer a transparent original logo if available; it is contained without cropping or recolouring. Adjust the hero image crop after reviewing the actual reference. The hero uses a dark readability overlay and the logo is repositioned above the headline on mobile. All existing content, section anchors, contact links and reduced-motion support remain.
+
+The artwork should have layered foliage, vines and golden sunlight, with a naturally dark left-hand area for copy. This environment must come from a supplied/approved image asset. No unrelated illustration has been substituted. Selected section illustrations can be added after receiving the reference; current curves and borders are framing only, not replacement jungle artwork.
+
 Edit `src/config.ts` for email, Facebook, location, establishment year, telephone, original logo and photography paths. Section copy lives in `src/App.tsx`; visual styles live in `src/styles.css`.
 
 The supplied brief included **no image files**. This version intentionally uses a temporary text wordmark and labelled botanical photo panels, drawn with Lucide icons. They are not the original logo or authentic rescue photographs. Replace them before presenting this as the finished site.
