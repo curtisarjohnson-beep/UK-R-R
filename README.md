@@ -43,7 +43,7 @@ The hero keeps copy over the dark left side, with the logo over the sunlit right
 
 Edit `src/config.ts` for email, Facebook, location, establishment year, telephone, original logo and photography paths. Section copy lives in `src/App.tsx`; visual styles live in `src/styles.css`.
 
-The original logo and jungle artwork are installed. The About portrait and five animal cards now use the supplied images. The separate community gallery still has clearly labelled placeholders drawn with Lucide icons; replace those with approved gallery images.
+The logo and jungle artwork are installed. The displayed emblem has an owner-requested EST. 2025 correction (`assets/originals/chameleon-emblem-est-2025.png`, served losslessly as `public/images/chameleon-emblem-2025.webp`); the original EST. 2026 artwork remains preserved. The About portrait and five animal cards now use the supplied images. The separate community gallery still has clearly labelled placeholders drawn with Lucide icons; replace those with approved gallery images.
 
 Create `public/images/`, add the supplied original assets, then set the relevant paths in `src/config.ts`, for example `images/snake-enclosure.webp`. Preserve logo proportions; no replacement logo has been invented. The original logo is configured already; add an approved small favicon separately if desired.
 

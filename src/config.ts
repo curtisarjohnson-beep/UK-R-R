@@ -1,14 +1,14 @@
 export const site = {
   name: 'UK Reptiles & Recovery',
   shortName: 'UK R&R',
-  established: 2026,
+  established: 2025,
   email: 'ukreptiles.recovery@gmail.com',
   facebook: 'https://www.facebook.com/UKReptilesandRescue/',
   location: 'Northamptonshire, United Kingdom',
   // Set to a genuine international-format number to enable the telephone link.
   phone: '' as string,
   // Add the original logo file to public/images, then set its path here.
-  logo: 'images/chameleon-emblem.webp' as string,
+  logo: 'images/chameleon-emblem-2025.webp' as string,
   productionUrl: import.meta.env.VITE_SITE_URL || '',
 }
 

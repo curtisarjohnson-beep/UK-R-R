@@ -98,7 +98,7 @@ function App() {
 
       <section className="section section-ivory organic-about" id="about" aria-labelledby="about-title">
         <div className="container about-grid reveal">
-          <div className="about-visual"><Foliage /><Photo id="about" /><span className="est-stamp"><Leaf size={22} /><strong>Rooted in care.</strong><span>EST. 2026 · UK R&R</span></span></div>
+          <div className="about-visual"><Foliage /><Photo id="about" /><span className="est-stamp"><Leaf size={22} /><strong>Rooted in care.</strong><span>EST. {site.established} · UK R&R</span></span></div>
           <div className="about-copy"><p className="eyebrow">01 / A LITTLE ABOUT US</p><h2 id="about-title">A Safe Place for<br />Reptiles <em>in Need.</em></h2>
             <p className="lead">Some need a new beginning.<br />All deserve to be understood.</p>
             <p>UK Reptiles & Recovery is a Northamptonshire-based organisation dedicated to supporting reptile rescue, recovery and responsible rehoming.</p>
