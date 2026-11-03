@@ -25,7 +25,7 @@ The build performs strict TypeScript checking and outputs `dist/`. Tests render 
 
 ## One-shot chameleon reveal
 
-The hero emblem now plays a four-second CSS sequence using the existing green chameleon and flag assets: a gentle entrance, warm gold dissolve and top-to-bottom reveal of the unchanged original full emblem. It is a stylised reveal rather than a registered colour morph. The concept sheet is never displayed. No animation library was added.
+The hero emblem plays a four-second, one-shot sequence: the green chameleon is already settled in front of the glossy rectangular flag, its head makes a small glance, a forked tongue flicks twice and retracts, then both layers crossfade into the complete EST. 2025 emblem. The body and flag remain stationary. Lightweight SVG masks reuse the supplied chameleon artwork for the moving head; no new animation library or regenerated animal artwork is used. This is a stylised crossfade rather than a registered colour morph. The concept sheet is never displayed.
 
 `src/LogoReveal.tsx` pre-decodes the three images before playback, falls back to the original emblem on errors/timeouts, and removes decorative layers after completion. `src/logo-reveal.css` reserves the original logo proportions and plays the sequence once. Reduced motion shows the static emblem immediately, including when the preference changes during playback. The surrounding hero layout, jungle background and copy are unchanged. WebP animation layers retain the supplied transparency; original PNGs remain in `public/images/logo-animation/`.
 
