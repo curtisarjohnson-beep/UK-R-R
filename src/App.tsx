@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight, Check, ChevronUp, Heart, Leaf, Mail, MapPin, Men
 import { navigation, photos, site } from './config'
 import LogoReveal from './LogoReveal'
 import ScrollSnake from './ScrollSnake'
+import { Foliage, OrganicWave } from './OrganicDetails'
 
 function Brand({ footer = false }: { footer?: boolean }) {
   return <a href="#home" className={`brand ${footer ? 'brand-footer' : ''}`} aria-label={`${site.name} home`}>
@@ -75,7 +76,7 @@ function App() {
 
     <main id="main">
       <ScrollSnake />
-      <section className="hero" id="home" aria-labelledby="hero-title">
+      <section className="hero organic-hero" id="home" aria-labelledby="hero-title">
         <div className={`hero-art jungle-scene ${photos.hero.src ? 'has-artwork' : 'awaiting-artwork'}`}>
           {photos.hero.src && <img className="jungle-background" src={photos.hero.src} width="1672" height="941" alt="" fetchPriority="high" decoding="async" />}
         </div>
@@ -89,14 +90,15 @@ function App() {
           <p className="hero-description">Providing a safe place for reptiles in need across Northamptonshire. Whether you’re seeking advice, support or a reptile companion, we’re here to help.</p>
           <div className="button-row"><a href="#contact" className="button">Get in Touch <ArrowRight size={18} /></a><a href="#about" className="text-link">Discover Our Mission <ArrowDown size={16} /></a></div>
         </div>
+        <Foliage />
         <div className="hero-bottom container"><span>COMPASSION FOR THE EXTRAORDINARY.</span><a href="#about" aria-label="Scroll to About UK R&R"><ArrowDown size={18} /></a><span>A LITTLE R&R. A FRESH START.</span></div>
       </section>
 
-      <div className="mission-strip"><span>RESCUE WITH COMPASSION</span><span className="strip-star">✳</span><span>RECOVERY WITH CARE</span><span className="strip-star">✳</span><span>REHOMING WITH PURPOSE</span></div>
+      <div className="mission-strip organic-mission"><OrganicWave /><span>RESCUE WITH COMPASSION</span><span className="strip-star">✳</span><span>RECOVERY WITH CARE</span><span className="strip-star">✳</span><span>REHOMING WITH PURPOSE</span></div>
 
-      <section className="section section-ivory" id="about" aria-labelledby="about-title">
+      <section className="section section-ivory organic-about" id="about" aria-labelledby="about-title">
         <div className="container about-grid reveal">
-          <div className="about-visual"><Photo id="about" /><span className="est-stamp"><Leaf size={22} /><strong>Rooted in care.</strong><span>EST. 2026 · UK R&R</span></span></div>
+          <div className="about-visual"><Foliage /><Photo id="about" /><span className="est-stamp"><Leaf size={22} /><strong>Rooted in care.</strong><span>EST. 2026 · UK R&R</span></span></div>
           <div className="about-copy"><p className="eyebrow">01 / A LITTLE ABOUT US</p><h2 id="about-title">A Safe Place for<br />Reptiles <em>in Need.</em></h2>
             <p className="lead">Some need a new beginning.<br />All deserve to be understood.</p>
             <p>UK Reptiles & Recovery is a Northamptonshire-based organisation dedicated to supporting reptile rescue, recovery and responsible rehoming.</p>
@@ -104,6 +106,7 @@ function App() {
             <div className="inline-note"><Heart size={20} /><span>Animal welfare at the heart of every conversation.</span></div>
           </div>
         </div>
+        <Foliage /><OrganicWave />
       </section>
 
       <section className="section services-section" id="what-we-do" aria-labelledby="services-title">

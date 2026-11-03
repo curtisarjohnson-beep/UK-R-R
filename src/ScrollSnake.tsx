@@ -55,7 +55,7 @@ export default function ScrollSnake() {
         const phase = (local * local * (3 - 2 * local)) * Math.PI * 2
         return { x: viewportWidth / 2 + Math.sin(phase) * amplitude, y }
       }
-      const left: string[] = [], right: string[] = [], bands: string[] = []
+      const left: string[] = [], right: string[] = [], diamonds: string[] = []
       for (let i = 0; i <= 96; i++) {
         const t = i / 96
         const p = point(t)
@@ -65,13 +65,13 @@ export default function ScrollSnake() {
         const nx = Math.sin(angle) * width, ny = -Math.cos(angle) * width
         left.push(`${p.x + nx},${p.y + ny}`)
         right.unshift(`${p.x - nx},${p.y - ny}`)
-        if (i > 18 && i % 5 === 0) bands.push(`M${p.x + nx * .75},${p.y + ny * .75} Q${p.x},${p.y + 3} ${p.x - nx * .75},${p.y - ny * .75}`)
+        if (i > 18 && i % 5 === 0) diamonds.push(`M${p.x - Math.cos(angle) * 5},${p.y - Math.sin(angle) * 5} L${p.x + nx * .8},${p.y + ny * .8} L${p.x + Math.cos(angle) * 5},${p.y + Math.sin(angle) * 5} L${p.x - nx * .8},${p.y - ny * .8}Z`)
       }
       const end = point(1), before = point(.99)
       svg.current.setAttribute('viewBox', `0 0 ${viewportWidth} ${height}`)
       svg.current.style.clipPath = `inset(${top}px 0 ${Math.max(0, height - bottom)}px 0)`
       body.current?.setAttribute('d', `M${left.join(' L')} L${right.join(' L')} Z`)
-      markings.current?.setAttribute('d', bands.join(' '))
+      markings.current?.setAttribute('d', diamonds.join(' '))
       head.current?.setAttribute('transform', `translate(${end.x} ${end.y}) rotate(${Math.atan2(end.y - before.y, end.x - before.x) * 180 / Math.PI - 90}) scale(${mobile ? .85 : 1.2})`)
       svg.current.style.visibility = 'visible'
     }
@@ -99,7 +99,7 @@ export default function ScrollSnake() {
 
   return <svg ref={svg} className="scroll-snake" aria-hidden="true" focusable="false" width="40" height="800" viewBox="0 0 40 800">
     <path ref={body} fill="#376342" stroke="#b5ae67" strokeWidth=".65" strokeLinejoin="round" />
-    <path ref={markings} fill="none" stroke="#c6b86f" strokeWidth="1.25" strokeLinecap="round" opacity=".7" />
+    <path ref={markings} fill="#c6b86f" stroke="#234b35" strokeWidth=".5" opacity=".85" />
     <g ref={head}>
       <path d="M-3.3,-5 C-6,-1 -5,6 -2,9 Q0,11 2,9 C5,6 6,-1 3.3,-5Z" fill="#376342" stroke="#b5ae67" strokeWidth=".65" />
       <path d="M0,-3 Q-1,2 0,6" fill="none" stroke="#c6b86f" strokeWidth="1" opacity=".65" />

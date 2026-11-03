@@ -6,6 +6,8 @@ import '@fontsource/dm-serif-display/latin-400-italic.css'
 import '@fontsource-variable/nunito-sans/wght.css'
 import './styles.css'
 import './jungle.css'
+import '@fontsource-variable/fredoka/wght.css'
+import './organic-prototype.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode><App /></React.StrictMode>,
