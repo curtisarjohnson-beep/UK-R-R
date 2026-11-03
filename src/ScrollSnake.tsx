@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import './scroll-snake.css'
 
-// A short, tapered ribbon follows a scroll-parametrised centreline. There is
+// A long, tapered ribbon follows a scroll-parametrised centreline. There is
 // deliberately no clock: stopping or reversing scrolling stops or reverses it.
 export default function ScrollSnake() {
   const svg = useRef<SVGSVGElement>(null)
@@ -10,38 +10,56 @@ export default function ScrollSnake() {
   const head = useRef<SVGGElement>(null)
 
   useEffect(() => {
-    const media = window.matchMedia('(min-width: 1280px) and (min-height: 600px) and (prefers-reduced-motion: no-preference)')
+    const media = window.matchMedia('(prefers-reduced-motion: no-preference)')
+    const hero = document.querySelector<HTMLElement>('.hero')
+    const main = document.getElementById('main')
     let frame = 0
     const draw = () => {
       frame = 0
       if (!media.matches || !svg.current) return
       const height = window.innerHeight
-      const range = document.documentElement.scrollHeight - height
-      const progress = range > 0 ? Math.max(0, Math.min(1, window.scrollY / range)) : 0
-      const length = Math.min(210, height * .28)
-      const tip = 150 + length + progress * (height - 185 - length)
+      const viewportWidth = document.documentElement.clientWidth
+      const mobile = viewportWidth < 768
+      const heroBottom = hero?.getBoundingClientRect().bottom ?? 0
+      const mainBottom = main?.getBoundingClientRect().bottom ?? height
+      const headerBottom = document.querySelector('header')?.getBoundingClientRect().bottom ?? 90
+      const top = Math.max(headerBottom + 12, heroBottom)
+      const bottom = Math.min(height, mainBottom)
+      // Clip in viewport coordinates: responsive hero and footer heights need
+      // no fixed offsets, and the artwork never crosses into either one.
+      if (top >= bottom) {
+        svg.current.style.visibility = 'hidden'
+        return
+      }
+      const start = (hero?.offsetTop ?? 0) + (hero?.offsetHeight ?? 0)
+      const range = Math.max(1, (main?.scrollHeight ?? document.documentElement.scrollHeight) - start - height)
+      const progress = Math.max(0, Math.min(1, (window.scrollY - start + height * .3) / range))
+      const length = Math.min(mobile ? 560 : 760, height * .76)
+      const tip = height * .89 + Math.sin(progress * Math.PI * 2) * height * .04
       const phase = progress * Math.PI * 16
+      const amplitude = Math.min(mobile ? 38 : 100, viewportWidth * .1)
       const point = (t: number) => ({
-        x: 19 + Math.sin(t * 7 - phase) * 7 + Math.sin(t * 3 + phase * .5) * 2,
+        x: viewportWidth / 2 + Math.sin(t * 10 - phase) * amplitude + Math.sin(t * 4 + phase * .5) * amplitude * .2,
         y: tip - length * (1 - t),
       })
       const left: string[] = [], right: string[] = [], bands: string[] = []
-      for (let i = 0; i <= 64; i++) {
-        const t = i / 64
+      for (let i = 0; i <= 96; i++) {
+        const t = i / 96
         const p = point(t)
         const next = point(t + .001)
         const angle = Math.atan2(next.y - p.y, next.x - p.x)
-        const width = 3.6 * Math.sin(Math.min(1, t * 2) * Math.PI / 2)
+        const width = (mobile ? 3 : 4.5) * Math.sin(Math.min(1, t * 2) * Math.PI / 2)
         const nx = Math.sin(angle) * width, ny = -Math.cos(angle) * width
         left.push(`${p.x + nx},${p.y + ny}`)
         right.unshift(`${p.x - nx},${p.y - ny}`)
-        if (i > 12 && i % 7 === 0) bands.push(`M${p.x + nx * .75},${p.y + ny * .75} Q${p.x},${p.y + 3} ${p.x - nx * .75},${p.y - ny * .75}`)
+        if (i > 18 && i % 5 === 0) bands.push(`M${p.x + nx * .75},${p.y + ny * .75} Q${p.x},${p.y + 3} ${p.x - nx * .75},${p.y - ny * .75}`)
       }
       const end = point(1), before = point(.99)
-      svg.current.setAttribute('viewBox', `0 0 40 ${height}`)
+      svg.current.setAttribute('viewBox', `0 0 ${viewportWidth} ${height}`)
+      svg.current.style.clipPath = `inset(${top}px 0 ${Math.max(0, height - bottom)}px 0)`
       body.current?.setAttribute('d', `M${left.join(' L')} L${right.join(' L')} Z`)
       markings.current?.setAttribute('d', bands.join(' '))
-      head.current?.setAttribute('transform', `translate(${end.x} ${end.y}) rotate(${Math.atan2(end.y - before.y, end.x - before.x) * 180 / Math.PI - 90})`)
+      head.current?.setAttribute('transform', `translate(${end.x} ${end.y}) rotate(${Math.atan2(end.y - before.y, end.x - before.x) * 180 / Math.PI - 90}) scale(${mobile ? .85 : 1.2})`)
       svg.current.style.visibility = 'visible'
     }
     const schedule = () => {

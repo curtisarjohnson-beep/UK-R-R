@@ -60,7 +60,6 @@ function App() {
   }
 
   return <>
-    <ScrollSnake />
     <a className="skip-link" href="#main">Skip to content</a>
     <script type="application/ld+json">{JSON.stringify(structuredData).replace(/</g, '\\u003c')}</script>
     <header className="site-header" ref={header}>
@@ -75,6 +74,7 @@ function App() {
     </header>
 
     <main id="main">
+      <ScrollSnake />
       <section className="hero" id="home" aria-labelledby="hero-title">
         <div className={`hero-art jungle-scene ${photos.hero.src ? 'has-artwork' : 'awaiting-artwork'}`}>
           {photos.hero.src && <img className="jungle-background" src={photos.hero.src} width="1672" height="941" alt="" fetchPriority="high" decoding="async" />}
