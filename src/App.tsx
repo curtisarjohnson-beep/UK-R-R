@@ -119,6 +119,7 @@ function App() {
           ].map(({ number, Icon, title, copy }) => <article className="service-card" key={title}><div className="card-top"><Icon size={32} strokeWidth={1.3} /><span>{number}</span></div><h3>{title}</h3><p>{copy}</p><span className="card-rule" /></article>)}</div>
           <p className="service-note">Need help with a reptile? <a href="#contact">Talk to us about your situation <ArrowRight size={15} /></a></p>
         </div>
+        <Foliage /><OrganicWave />
       </section>
 
       <section className="section section-ivory animals-section" id="animals" aria-labelledby="animals-title">
@@ -127,6 +128,7 @@ function App() {
           <div className="animal-grid reveal">{['snakes', 'lizards', 'tortoises', 'geckos', 'exotics'].map((id, index) => <article key={id} className={`animal-card animal-${index}`}><Photo id={id} /><div className="animal-label"><h3>{photos[id].label}</h3><span>0{index + 1}</span></div></article>)}</div>
           <p className="caption-note">A glimpse of the species we support. These are not adoption listings. <a href="#contact">Contact us to discuss rehoming.</a></p>
         </div>
+        <Foliage /><OrganicWave />
       </section>
 
       <section className="section gallery-section" id="life" aria-labelledby="life-title">
@@ -135,6 +137,7 @@ function App() {
           <div className="gallery-grid reveal">{['communitySnake', 'communityDragon', 'communityTortoise'].map(id => <figure key={id}><Photo id={id} /><figcaption>{photos[id].label}</figcaption></figure>)}</div>
           <p className="caption-note">Our own moments, coming soon. Original photographs will be added with permission.</p>
         </div>
+        <Foliage /><OrganicWave />
       </section>
 
       <section className="section section-ivory support-section" id="support" aria-labelledby="support-title">
@@ -145,11 +148,12 @@ function App() {
             { Icon: Users, title: 'Join Our Community', copy: 'Follow us on Facebook and help our message reach more people.', link: true },
           ].map(({ Icon, title, copy, link }) => <article className="help-item" key={title}><span className="icon-circle"><Icon size={24} strokeWidth={1.4} /></span><div><h3>{title}</h3><p>{copy}</p>{link && <a href={site.facebook} target="_blank" rel="noopener noreferrer" className="text-link">Find us on Facebook <ArrowRight size={16} /><span className="sr-only"> (opens in a new tab)</span></a>}</div></article>)}</div>
         </div>
+        <Foliage /><OrganicWave />
       </section>
 
-      <section className="values-section" aria-labelledby="values-title"><div className="container reveal"><p className="eyebrow" id="values-title">THE VALUES THAT GUIDE US</p><div className="values">{['Welfare', 'Honesty', 'Responsibility', 'Collaboration', 'Trust'].map(value => <span key={value}><Check size={16} strokeWidth={1.5} />{value}</span>)}</div></div></section>
+      <section className="values-section" aria-labelledby="values-title"><div className="container reveal"><p className="eyebrow" id="values-title">THE VALUES THAT GUIDE US</p><div className="values">{['Welfare', 'Honesty', 'Responsibility', 'Collaboration', 'Trust'].map(value => <span key={value}><Check size={16} strokeWidth={1.5} />{value}</span>)}</div></div><OrganicWave /></section>
 
-      <section className="section contact-section" id="contact" aria-labelledby="contact-title"><div className="container contact-grid reveal"><div><p className="eyebrow">06 / LET’S TALK</p><h2 id="contact-title">Let’s Give Reptiles<br />a <em>Better Future.</em></h2><p>Whether you need advice, would like to discuss rehoming or want to support our work, we’d love to hear from you.</p><span className="location"><MapPin size={18} />{site.location}</span></div><div className="contact-options"><a className="contact-card" href={`mailto:${site.email}`}><Mail size={26} strokeWidth={1.4} /><span><small>DROP US A LINE</small><strong>{site.email}</strong></span><ArrowRight size={20} /></a><a className="contact-card" href={site.facebook} target="_blank" rel="noopener noreferrer"><Users size={26} strokeWidth={1.4} /><span><small>JOIN THE CONVERSATION</small><strong>Find us on Facebook</strong><span className="sr-only"> (opens in a new tab)</span></span><ArrowRight size={20} /></a>{site.phone && <a className="contact-card" href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}><Phone size={26} /><span><small>GIVE US A CALL</small><strong>{site.phone}</strong></span><ArrowRight size={20} /></a>}<p className="contact-note">A little advice can be the start of something good.</p></div></div></section>
+      <section className="section contact-section" id="contact" aria-labelledby="contact-title"><div className="container contact-grid reveal"><div><p className="eyebrow">06 / LET’S TALK</p><h2 id="contact-title">Let’s Give Reptiles<br />a <em>Better Future.</em></h2><p>Whether you need advice, would like to discuss rehoming or want to support our work, we’d love to hear from you.</p><span className="location"><MapPin size={18} />{site.location}</span></div><div className="contact-options"><a className="contact-card" href={`mailto:${site.email}`}><Mail size={26} strokeWidth={1.4} /><span><small>DROP US A LINE</small><strong>{site.email}</strong></span><ArrowRight size={20} /></a><a className="contact-card" href={site.facebook} target="_blank" rel="noopener noreferrer"><Users size={26} strokeWidth={1.4} /><span><small>JOIN THE CONVERSATION</small><strong>Find us on Facebook</strong><span className="sr-only"> (opens in a new tab)</span></span><ArrowRight size={20} /></a>{site.phone && <a className="contact-card" href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}><Phone size={26} /><span><small>GIVE US A CALL</small><strong>{site.phone}</strong></span><ArrowRight size={20} /></a>}<p className="contact-note">A little advice can be the start of something good.</p></div></div><Foliage /></section>
     </main>
 
     <footer className="site-footer"><div className="container"><div className="footer-top"><div><Brand footer /><p>A safe place for reptiles in need of some R&R.<br />Rescue. Recovery. Rehoming.</p></div><nav aria-label="Footer navigation">{navigation.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav><div className="footer-contact"><span>{site.location}</span><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook <ArrowRight size={14} /><span className="sr-only"> (opens in a new tab)</span></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span><span>Built with care. For lives that matter.</span><a href="#home">Back to top <ChevronUp size={16} /></a></div><p className="privacy-note">This site has no contact forms, analytics or embedded social feeds. Email and Facebook links open external services, which have their own privacy policies.</p><p className="asset-note">Jungle illustration and original chameleon emblem supplied by UK R&R. About and animal showcase images supplied by UK R&R. The community gallery still contains labelled placeholders pending its own photographs.</p></div></footer>
