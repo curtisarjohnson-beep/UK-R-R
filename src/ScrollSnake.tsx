@@ -13,6 +13,7 @@ export default function ScrollSnake() {
     const media = window.matchMedia('(prefers-reduced-motion: no-preference)')
     const hero = document.querySelector<HTMLElement>('.hero')
     const main = document.getElementById('main')
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('#main > section:not(.hero)'))
     let frame = 0
     const draw = () => {
       frame = 0
@@ -36,12 +37,22 @@ export default function ScrollSnake() {
       const progress = Math.max(0, Math.min(1, (window.scrollY - start + height * .3) / range))
       const length = Math.min(mobile ? 560 : 760, height * .76)
       const tip = height * .89 + Math.sin(progress * Math.PI * 2) * height * .04
-      const phase = progress * Math.PI * 16
-      const amplitude = Math.min(mobile ? 38 : 100, viewportWidth * .1)
-      const point = (t: number) => ({
-        x: viewportWidth / 2 + Math.sin(t * 10 - phase) * amplitude + Math.sin(t * 4 + phase * .5) * amplitude * .2,
-        y: tip - length * (1 - t),
+      const amplitude = Math.min(mobile ? 90 : 280, viewportWidth * .24)
+      // Measure actual responsive section bounds once per frame. One complete
+      // wave spans each section, including taller stacked mobile sections.
+      const bounds = sections.map(section => {
+        const rect = section.getBoundingClientRect()
+        return { top: rect.top, height: rect.height }
       })
+      const point = (t: number) => {
+        const y = tip - length * (1 - t)
+        const index = bounds.findIndex(section => y < section.top + section.height)
+        const section = bounds[index < 0 ? bounds.length - 1 : index]
+        const local = section ? Math.max(0, Math.min(1, (y - section.top) / section.height)) : 0
+        // Ease at section joins so differently sized sections meet smoothly.
+        const phase = (local * local * (3 - 2 * local)) * Math.PI * 2
+        return { x: viewportWidth / 2 + Math.sin(phase) * amplitude, y }
+      }
       const left: string[] = [], right: string[] = [], bands: string[] = []
       for (let i = 0; i <= 96; i++) {
         const t = i / 96
