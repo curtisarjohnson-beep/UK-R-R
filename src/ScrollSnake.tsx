@@ -12,7 +12,7 @@ export default function ScrollSnake() {
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: no-preference)')
     const hero = document.querySelector<HTMLElement>('.hero')
-    const finish = document.querySelector<HTMLElement>('.values-section')
+    const finish = document.querySelector<HTMLElement>('.support-section')
     const allSections = Array.from(document.querySelectorAll<HTMLElement>('#main > section:not(.hero)'))
     const finishIndex = finish ? allSections.indexOf(finish) : allSections.length - 1
     const sections = allSections.slice(0, finishIndex + 1)
@@ -28,8 +28,8 @@ export default function ScrollSnake() {
       const headerBottom = document.querySelector('header')?.getBoundingClientRect().bottom ?? 90
       const top = Math.max(headerBottom + 12, heroBottom)
       const bottom = Math.min(height, finishBottom)
-      // Clip between the hero and the values section. The head parks at the
-      // end of values and scrolls away with it, leaving contact snake-free.
+      // Clip between the hero and Make a difference. The head parks at its
+      // end and scrolls away, keeping the values and contact sections clear.
       if (top >= bottom) {
         svg.current.style.visibility = 'hidden'
         return
