@@ -14,7 +14,7 @@
   opacity: 0;
   will-change: transform, opacity;
 }
-.logo-reveal-flag { left: 23%; top: 16%; width: 54%; aspect-ratio: 1; box-shadow: 0 8px 24px #07170c33; }
+.logo-reveal-flag { left: 12%; top: 20%; width: 76%; aspect-ratio: 640 / 380; filter: drop-shadow(0 10px 12px #07170c66); }
 .logo-reveal-green { left: 0; top: 9%; }
 .logo-reveal .logo-reveal-final {
   position: absolute;
@@ -54,7 +54,7 @@
 .is-playing .logo-reveal-final { animation: emblem-reveal 4s ease-out both; }
 @keyframes flag-arrives {
   0% { opacity: 0; transform: translateY(6px); }
-  12%, 42% { opacity: .85; transform: translateY(0); }
+  12%, 42% { opacity: 1; transform: translateY(0); }
   57%, 100% { opacity: 0; transform: translateY(0); }
 }
 @keyframes chameleon-arrives {

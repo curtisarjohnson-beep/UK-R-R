@@ -4,7 +4,7 @@ import './logo-reveal.css'
 
 const layers = {
   green: 'images/logo-animation/green-chameleon.webp',
-  flag: 'images/logo-animation/union-jack-square.svg',
+  flag: 'images/logo-animation/union-jack-glossy.svg',
 }
 
 // A theatrical dissolve accommodates the different illustrations without
@@ -47,7 +47,7 @@ export default function LogoReveal() {
 
   return <div className={`logo-reveal is-${phase}`} role="img" aria-label={site.name}>
     {phase !== 'complete' && <div className="logo-reveal-layers" aria-hidden="true">
-      <img className="logo-reveal-flag" src={layers.flag} alt="" width="600" height="600" />
+      <img className="logo-reveal-flag" src={layers.flag} alt="" width="640" height="380" />
       <img className="logo-reveal-green" src={layers.green} alt="" width="1536" height="1024" />
       <span className="logo-reveal-glow" />
       <span className="logo-reveal-spark spark-one" />

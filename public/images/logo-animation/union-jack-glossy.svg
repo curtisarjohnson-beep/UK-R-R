@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380">
+  <defs>
+    <clipPath id="panel"><rect x="14" y="24" width="612" height="332" rx="22"/></clipPath>
+    <linearGradient id="rim" x2=".2" y2="1"><stop stop-color="#fff4d5"/><stop offset=".42" stop-color="#d4b778"/><stop offset=".75" stop-color="#8d743e"/><stop offset="1" stop-color="#ecd8a5"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#fff" stop-opacity=".2"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#001027" stop-opacity=".5"/></linearGradient>
+    <linearGradient id="shine" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".48"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect x="12" y="22" width="616" height="336" rx="25" fill="#0c1c18" stroke="#071710" stroke-width="14"/>
+  <g clip-path="url(#panel)">
+    <g transform="translate(14 24) scale(10.2 11.0667)">
+      <path fill="#06276c" d="M0 0h60v30H0z"/>
+      <path stroke="#fff7e7" stroke-width="6" d="m0 0 60 30M0 30 60 0"/>
+      <path fill="#cb122c" d="M0 0v2l26 13h4L0 0Zm60 0h-4L30 13v2L60 0ZM60 30v-2L34 15h-4l30 15ZM0 30h4l26-13v-2L0 30Z"/>
+      <path stroke="#fff7e7" stroke-width="10" d="M30 0v30M0 15h60"/>
+      <path stroke="#cb122c" stroke-width="6" d="M30 0v30M0 15h60"/>
+    </g>
+    <rect x="14" y="24" width="612" height="332" fill="url(#shade)"/>
+    <path d="M24 34H616V125Q320 195 24 135Z" fill="url(#shine)"/>
+    <path d="M35 42Q320 21 605 42" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 335Q320 352 610 335" fill="none" stroke="#00142b" stroke-opacity=".4" stroke-width="5"/>
+  </g>
+  <rect x="12" y="22" width="616" height="336" rx="25" fill="none" stroke="url(#rim)" stroke-width="6"/>
+</svg>

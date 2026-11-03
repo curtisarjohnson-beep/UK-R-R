@@ -12,8 +12,10 @@ export default function ScrollSnake() {
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: no-preference)')
     const hero = document.querySelector<HTMLElement>('.hero')
-    const main = document.getElementById('main')
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('#main > section:not(.hero)'))
+    const finish = document.querySelector<HTMLElement>('.values-section')
+    const allSections = Array.from(document.querySelectorAll<HTMLElement>('#main > section:not(.hero)'))
+    const finishIndex = finish ? allSections.indexOf(finish) : allSections.length - 1
+    const sections = allSections.slice(0, finishIndex + 1)
     let frame = 0
     const draw = () => {
       frame = 0
@@ -22,21 +24,21 @@ export default function ScrollSnake() {
       const viewportWidth = document.documentElement.clientWidth
       const mobile = viewportWidth < 768
       const heroBottom = hero?.getBoundingClientRect().bottom ?? 0
-      const mainBottom = main?.getBoundingClientRect().bottom ?? height
+      const finishBottom = finish?.getBoundingClientRect().bottom ?? height
       const headerBottom = document.querySelector('header')?.getBoundingClientRect().bottom ?? 90
       const top = Math.max(headerBottom + 12, heroBottom)
-      const bottom = Math.min(height, mainBottom)
-      // Clip in viewport coordinates: responsive hero and footer heights need
-      // no fixed offsets, and the artwork never crosses into either one.
+      const bottom = Math.min(height, finishBottom)
+      // Clip between the hero and the values section. The head parks at the
+      // end of values and scrolls away with it, leaving contact snake-free.
       if (top >= bottom) {
         svg.current.style.visibility = 'hidden'
         return
       }
       const start = (hero?.offsetTop ?? 0) + (hero?.offsetHeight ?? 0)
-      const range = Math.max(1, (main?.scrollHeight ?? document.documentElement.scrollHeight) - start - height)
+      const range = Math.max(1, ((finish?.offsetTop ?? 0) + (finish?.offsetHeight ?? document.documentElement.scrollHeight)) - start - height)
       const progress = Math.max(0, Math.min(1, (window.scrollY - start + height * .3) / range))
       const length = Math.min(mobile ? 560 : 760, height * .76)
-      const tip = height * .89 + Math.sin(progress * Math.PI * 2) * height * .04
+      const tip = Math.min(height * .89 + Math.sin(progress * Math.PI * 2) * height * .04, finishBottom - 18)
       const amplitude = Math.min(mobile ? 90 : 280, viewportWidth * .24)
       // Measure actual responsive section bounds once per frame. One complete
       // wave spans each section, including taller stacked mobile sections.
