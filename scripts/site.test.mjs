@@ -22,7 +22,7 @@ test('rendered page preserves contact, navigation and content safeguards', async
     assert.ok(!html.includes('01604'))
     assert.ok(!html.includes('href="tel:'))
     assert.ok(!html.includes('<form'))
-    assert.ok(html.includes('images/jungle-clearing.webp'))
+    assert.ok(html.includes('images/jungle-sanctuary.webp'))
     assert.ok(html.includes('images/chameleon-emblem.webp'))
     assert.equal((html.match(/<img\b/g) || []).length, 11, 'Supplied images and the two decorative animation layers should render')
     assert.ok(html.includes('PHOTOGRAPH TO FOLLOW'))

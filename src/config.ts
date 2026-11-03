@@ -17,7 +17,7 @@ export const site = {
 // Only add original, licensed images with consent.
 // Leaving a path empty displays an explicitly labelled editorial placeholder.
 export const photos: Record<string, { src: string; alt: string; label: string }> = {
-  hero: { src: 'images/jungle-clearing.webp', alt: 'Illustrated jungle with layered tropical foliage and warm sunlight', label: 'Illustrated jungle artwork' },
+  hero: { src: 'images/jungle-sanctuary.webp', alt: 'Illustrated jungle stream with a gecko, tortoise and snake among sunlit tropical foliage', label: 'Illustrated jungle artwork' },
   about: { src: 'images/about.webp', alt: 'Man holding a ball python in a room lined with reptile enclosures', label: 'Life at UK R&R' },
   snakes: { src: 'images/snakes.webp', alt: 'Ball python coiled in a person’s hands', label: 'Snakes' },
   lizards: { src: 'images/lizards.webp', alt: 'Bearded dragon resting on a computer keyboard', label: 'Lizards' },

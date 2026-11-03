@@ -78,7 +78,7 @@ function App() {
       <ScrollSnake />
       <section className="hero organic-hero" id="home" aria-labelledby="hero-title">
         <div className={`hero-art jungle-scene ${photos.hero.src ? 'has-artwork' : 'awaiting-artwork'}`}>
-          {photos.hero.src && <img className="jungle-background" src={photos.hero.src} width="1672" height="941" alt="" fetchPriority="high" decoding="async" />}
+          {photos.hero.src && <img className="jungle-background" src={photos.hero.src} width="1671" height="941" alt="" fetchPriority="high" decoding="async" />}
         </div>
         <div className="hero-emblem">
           {site.logo ? <LogoReveal /> : <div className="hero-asset-pending"><span className="eyebrow">THE NEXT CHAPTER</span><p>A little adventure.<br />A lot of heart.</p><span>Original chameleon emblem & illustrated<br />jungle artwork awaiting supply.</span></div>}
