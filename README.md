@@ -2,6 +2,8 @@
 
 A responsive, static React + TypeScript website for UK R&R, Northamptonshire. Built with Vite, Tailwind CSS and Lucide icons. No backend, database, payments, analytics, remote fonts or embedded social feeds.
 
+Pages Link - https://curtisarjohnson-beep.github.io/UK-R-R/
+
 ## Local development
 
 Use Node.js 22 or 24 LTS and npm. From this checkout:
