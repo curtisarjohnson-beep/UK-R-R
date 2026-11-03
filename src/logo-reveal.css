@@ -58,10 +58,10 @@
   57%, 100% { opacity: 0; transform: translateY(0); }
 }
 @keyframes chameleon-arrives {
-  0%, 5% { opacity: 0; transform: translate(19%, 6%) rotate(-3deg); }
-  12% { opacity: 1; transform: translate(13%, 3%) rotate(-1deg); }
-  19% { transform: translate(8%, 5%) rotate(-2deg); }
-  27% { transform: translate(3%, 0) rotate(1deg); }
+  0%, 5% { opacity: 0; transform: translate(3%, 36%) rotate(-3deg); }
+  12% { opacity: 1; transform: translate(2%, 25%) rotate(-1deg); }
+  19% { transform: translate(-1%, 16%) rotate(-2deg); }
+  27% { transform: translate(1%, 6%) rotate(1deg); }
   35%, 43% { opacity: 1; transform: translate(0, 0) rotate(0); }
   52% { opacity: .3; transform: translate(0, -1%) rotate(0); }
   58%, 100% { opacity: 0; transform: translate(0, -1%) rotate(0); }
@@ -72,7 +72,7 @@
   75%, 100% { opacity: 0; transform: scale(1.2); }
 }
 @keyframes emblem-reveal {
-  0%, 56% { opacity: 0; clip-path: inset(0 0 100% 0); }
+  0%, 56% { opacity: 0; clip-path: inset(100% 0 0 0); }
   62% { opacity: .5; }
   90%, 100% { opacity: 1; clip-path: inset(0 0 0 0); }
 }

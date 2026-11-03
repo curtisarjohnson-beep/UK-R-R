@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowRight, Check, ChevronUp, Heart, Leaf, Mail, MapPin, Menu, MessageCircle, PackageOpen, Phone, ShieldCheck, Sprout, Users, X } from 'lucide-react'
 import { navigation, photos, site } from './config'
 import LogoReveal from './LogoReveal'
+import ScrollSnake from './ScrollSnake'
 
 function Brand({ footer = false }: { footer?: boolean }) {
   return <a href="#home" className={`brand ${footer ? 'brand-footer' : ''}`} aria-label={`${site.name} home`}>
@@ -59,6 +60,7 @@ function App() {
   }
 
   return <>
+    <ScrollSnake />
     <a className="skip-link" href="#main">Skip to content</a>
     <script type="application/ld+json">{JSON.stringify(structuredData).replace(/</g, '\\u003c')}</script>
     <header className="site-header" ref={header}>

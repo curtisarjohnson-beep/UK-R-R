@@ -1,0 +1,18 @@
+/* The desktop content has at least 56px of side clearance. Stay inside that
+   existing gutter, below the sticky header, without changing page geometry. */
+.scroll-snake {
+  position: fixed;
+  right: 3px;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+  contain: strict;
+}
+@media (max-width: 1279px), (max-height: 599px), (prefers-reduced-motion: reduce) {
+  .scroll-snake { display: none; }
+}
