@@ -15,7 +15,8 @@
   will-change: transform, opacity;
 }
 .logo-reveal-flag { left: 12%; top: 20%; width: 76%; aspect-ratio: 640 / 380; filter: drop-shadow(0 10px 12px #07170c66); }
-.logo-reveal-green { left: 0; top: 9%; }
+/* Match the animal inside the full emblem, rather than the emblem canvas. */
+.logo-reveal-green { left: 9%; top: 11%; width: 76%; }
 .logo-reveal .logo-reveal-final {
   position: absolute;
   inset: 0;
