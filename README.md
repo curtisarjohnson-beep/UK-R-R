@@ -123,3 +123,12 @@ Organisation structured data contains verified information only. No street addre
 - Approve deployment, then connect and publish through Cloudflare Pages.
 
 The repository contains a functional visual preview. The logo and jungle background are installed; the About portrait and all five animal-card images are installed, while missing community-gallery photos remain identified. Updates are uploaded separately from the manual Pages deployment; run the workflow only after deployment is approved.
+
+
+## Rehoming catalogue and volunteer dashboard demo
+
+The website now includes an interactive, fictional rehoming catalogue at `#/rehoming` and an open **Demo Mode** dashboard at `#/admin`. Direct `/rehoming/` and `/admin/` entry points redirect to refresh-safe hash URLs on GitHub Pages. Animal records, edited templates, photos, Facebook drafts and simulated publishing history are stored in IndexedDB on the current browser only. There is no real admin authentication, shared database or Facebook connection. No credentials are needed.
+
+Volunteers can add/edit animals, upload photos, save drafts, publish locally, archive records, prepare template-based announcements, explicitly approve captions and photos, and simulate a publishing result. Copy Caption and Download Image support manual preparation. Editing approved content removes approval; unrelated animal edits do not generate duplicate announcements.
+
+See [prototype guide](docs/rehoming-prototype.md) for routes, usage and limits, and [Cloudflare migration](docs/cloudflare-migration.md) for future Worker/D1/R2/Access and Meta integration. Run `npm run build && npm test`; the build generates static route entry points and 404 recovery.

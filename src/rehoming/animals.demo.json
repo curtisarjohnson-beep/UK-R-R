@@ -1,0 +1,58 @@
+[
+  {
+    "id": "moss",
+    "name": "Moss",
+    "species": "Ball python",
+    "image": "snakes",
+    "age": "Approximately 4 years",
+    "sex": "Unknown",
+    "personality": "A calm, curious character who enjoys a quiet environment.",
+    "care": "A secure, species-appropriate enclosure with carefully controlled heat, humidity and suitable hides. Discuss feeding and husbandry with the rescue.",
+    "specialNeeds": "A quiet settling-in period and an experienced reptile keeper."
+  },
+  {
+    "id": "juniper",
+    "name": "Juniper",
+    "species": "Bearded dragon",
+    "image": "lizards",
+    "age": "Approximately 3 years",
+    "availability": "reserved",
+    "personality": "An alert sun-seeker with plenty of character.",
+    "care": "Appropriate UVB, a thermal gradient, space to explore and a balanced species-appropriate diet."
+  },
+  {
+    "id": "pebble",
+    "name": "Pebble",
+    "species": "Tortoise",
+    "image": "tortoises",
+    "age": "Adult; exact age unknown",
+    "personality": "A gentle explorer who enjoys investigating leafy corners.",
+    "care": "Species identification and tailored advice are essential before planning lighting, diet, outdoor access or seasonal care."
+  },
+  {
+    "id": "dot",
+    "name": "Dot",
+    "species": "Gecko",
+    "image": "geckos",
+    "availability": "rehomed",
+    "personality": "A quiet little character.",
+    "care": "An appropriately sized, secure enclosure with species-specific environmental conditions."
+  },
+  {
+    "id": "fern",
+    "name": "Fern",
+    "species": "Exotic animal",
+    "image": "exotics",
+    "publication": "draft",
+    "introduced": false,
+    "personality": "Draft demonstration record awaiting review."
+  },
+  {
+    "id": "oak",
+    "name": "Oak",
+    "species": "Tortoise",
+    "image": "tortoises",
+    "archived": true,
+    "availability": "rehomed"
+  }
+]

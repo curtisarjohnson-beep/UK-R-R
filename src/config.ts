@@ -31,5 +31,5 @@ export const photos: Record<string, { src: string; alt: string; label: string }>
 
 export const navigation = [
   ['About', 'about'], ['What We Do', 'what-we-do'],
-  ['Animals We Support', 'animals'], ['Support Us', 'support'], ['Contact', 'contact'],
+  ['Animals We Support', 'animals'], ['Available for Rehoming', '/rehoming'], ['Support Us', 'support'], ['Contact', 'contact'],
 ] as const

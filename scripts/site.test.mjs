@@ -16,7 +16,7 @@ test('rendered page preserves contact, navigation and content safeguards', async
     const html = renderToStaticMarkup(createElement(App))
     assert.equal((html.match(/<h1\b/g) || []).length, 1)
     const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]))
-    for (const match of html.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.has(match[1]), `Missing anchor ${match[1]}`)
+    for (const match of html.matchAll(/href="#([^"]+)"/g)) if (!match[1].startsWith('/')) assert.ok(ids.has(match[1]), `Missing anchor ${match[1]}`)
     assert.ok(html.includes('mailto:ukreptiles.recovery@gmail.com'))
     assert.ok(html.includes('https://www.facebook.com/UKReptilesandRescue/'))
     assert.ok(!html.includes('01604'))

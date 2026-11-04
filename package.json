@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc -b && vite build && node scripts/seo.mjs",
+    "build": "tsc -b && vite build && node scripts/seo.mjs && node scripts/routes.mjs",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node scripts/site.test.mjs"
+    "test": "node --test scripts/site.test.mjs scripts/rehoming.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/fredoka": "^5.3.0",
@@ -23,6 +23,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
+    "fake-indexeddb": "^6.2.7",
     "typescript": "~5.7.3",
     "vite": "^6.1.0"
   }
